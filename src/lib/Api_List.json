@@ -1,0 +1,115 @@
+
+{ 
+{
+	"id": "1",
+	"endpoint": "https://hacker-news.firebaseio.com/v1/",
+	"table": {
+		"fields": [
+			{
+				"name": "id",
+				"description": "The item's unique id."
+			}
+			{
+				"name": "deleted",
+				"description": "true if the item is deleted."
+			},
+			{
+				"name": "type",
+				"description": "The type of item. One of 'job', 'story', 'comment', 'poll', or 'pollopt'."
+			},
+			{
+				"name": "by",
+				"description": "The username of the item's author."
+			},
+			{
+				"name": "time",
+				"description": "Creation date of the item, in Unix Time."
+			},
+			{
+				"name": "text",
+				"description": "The comment, story or poll text. HTML."
+			},
+			{
+				"name": "dead",
+				"description": "true if the item is dead."
+			},
+			{
+				"name": "parent",
+				"description": "The comment's parent: either another comment or the relevant story."
+			},
+			{
+				"name": "poll",
+				"description": "The pollopt's associated poll."
+			},
+			{
+				"name": "kids",
+				"description": "The ids of the item's comments, in ranked display order."
+			},
+			{
+				"name": "url",
+				"description": "The URL of the story."
+			},
+			{
+				"name": "score",
+				"description": "The story's score, or the votes for a pollopt."
+			},
+			{
+				"name": "title",
+				"description": "The title of the story, poll or job. HTML."
+			},
+			{
+				"name": "parts",
+				"description": "A list of related pollopts, in display order."
+			},
+			{
+				"name": "descendants",
+				"description": "In the case of stories or polls, the total comment count."
+			}
+		]
+	}
+},
+
+{
+    "id": "2",
+    "endpoint": "https://jsonplaceholder.typicode.com/",
+},
+
+{"NewYork Times": "https://developer.nytimes.com/get-started"},
+{"OpenWeatherMap": "https://openweathermap.org/api"},
+{"NASA": "https://api.nasa.gov/"},
+{"Google Maps": "https://developers.google.com/maps"},
+{"Twitter": "https://developer.twitter.com/en/docs"},
+{"Spotify": "https://developer.spotify.com/documentation/web-api/"},
+{"Yelp": "https://www.yelp.com/developers/documentation/v3"},
+{"Stripe": "https://stripe.com/docs/api"},
+{"Twilio": "https://www.twilio.com/docs/usage/api"},
+{"Slack": "https://api.slack.com/"},
+{"GitHub": "https://docs.github.com/en/rest"},
+{"Reddit": "https://www.reddit.com/dev/api"},
+{"Instagram": "https://developers.facebook.com/docs/instagram-basic-display-api"},
+{"Facebook": "https://developers.facebook.com/docs/graph-api"},
+{"LinkedIn": "https://developer.linkedin.com/docs/rest-api"},
+{"Pinterest": "https://developers.pinterest.com/docs/getting-started/introduction"},
+{"Twitch": "https://dev.twitch.tv/docs/api"},
+{"YouTube": "https://developers.google.com/youtube/v3"},
+{"Wikipedia": "https://www.mediawiki.org/wiki/API:Main_page"},
+{"IMDb": "https://developer.imdb.com"},
+{"Stack Exchange":"https://api.stackexchange.com/"},
+{"WotSupport":"https://support.mywot.com/hc/en-us/articles/360024398673-3-Using-the-API"},
+{"Public list of api":"https://github.com/public-apis/public-apis#programming"},
+{"https://readspike.com/"},
+{"https://dzone.com/"},
+{"https://www.smashingmagazine.com/"},
+{"https://www.techrepublic.com/"},
+{"https://www.techradar.com/"},
+{"https://www.infoq.com/"},
+{"https://getpocket.com/home"},
+{"https://www.producthunt.com/"},
+{"https://www.designernews.co/"},
+{"https://codenews.app/"},
+{"https://flipboard.com/"},
+{"https://feedly.com/"},
+{"https://devbytes.co.in/"},
+{"https://www.sitepoint.com/blog/"},
+{"https://dev.to/souptikdn/10-best-coding-news-apps-and-websites-55h5"},
+}
