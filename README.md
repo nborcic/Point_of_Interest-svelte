@@ -36,3 +36,7 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+>
+>  project aimed at developing an application for managing points of interest. It leverages modern web development technologies such as
+> Svelte, JavaScript, HTML, and CSS. The project includes configurations for tools like Tailwind CSS and Vite and provides scripts for
+> developing, building, and previewing the application.
