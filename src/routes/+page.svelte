@@ -1,14 +1,14 @@
 <script>
+	import Footer from './../Components/Footer.svelte';
 	import Header from './../Components/Header.svelte';
 	import '../app.css';
-	import SetOne from '../Components/SetOne.svelte';
-	import SetTwo from '../Components/SetTwo.svelte';
+	import Carousel from '../Components/Carousel.svelte';
 </script>
 
-<main>
+<main class="flex justify-center items-center flex-col">
 	<Header />
-	<SetOne />
-	<SetTwo />
+	<Carousel />
+	<Footer />
 </main>
 
 <style>

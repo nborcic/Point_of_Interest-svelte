@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
 
-	let apod = null;
+	let apod = null; //async picture of the day
 	let error = null;
 
 	const fetchAPOD = async () => {
@@ -15,13 +15,11 @@
 				throw new Error('Failed to fetch APOD data');
 			}
 			apod = await response.json();
-			console.log(apod);
 		} catch (err) {
 			error = err.message;
 		}
 	};
 
-	// Fetch data when the component mounts
 	onMount(() => {
 		if (browser) {
 			fetchAPOD();
@@ -35,14 +33,14 @@
 	{#if error}
 		<p class="text-red-500">{error}</p>
 	{:else if !apod}
-		<p>Loading...</p>
+		<p class="text-xl text-justify">Loading...</p>
 	{:else}
 		<div>
 			<h2 class="text-2xl font-semibold mb-2">{apod.title}</h2>
 			<p class="text-sm text-gray-600 mb-4">{apod.date}</p>
 			{#if apod.media_type === 'image'}
 				<img
-					src={apod.url}
+					src={apod.hdurl}
 					alt={apod.title}
 					class="rounded-lg shadow-md mb-4 w-[50vw] h-[40vh] hover:scale-[1.5]"
 				/>
@@ -53,7 +51,7 @@
 						src={apod.url}
 						frameborder="0"
 						allowfullscreen
-						class="w-full h-full rounded-lg shadow-md"
+						class="w-full h-[30vh] rounded-lg shadow-md"
 					></iframe>
 				</div>
 			{/if}
