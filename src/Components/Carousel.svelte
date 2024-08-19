@@ -6,8 +6,8 @@
 
 <div class="embla flex justify-center items-center" use:emblaCarouselSvelte>
 	<div class="embla__container">
-		<div class="embla__slide"><Apod /></div>
 		<div class="embla__slide"><SlideTwo /></div>
+		<div class="embla__slide"><Apod /></div>
 		<div class="embla__slide">asd</div>
 	</div>
 </div>
