@@ -1,13 +1,12 @@
 <script>
 	import emblaCarouselSvelte from 'embla-carousel-svelte';
 	import Apod from './Nasa_APOD.svelte';
-	import SlideTwo from './SlideTwo.svelte';
 </script>
 
 <div class="embla flex justify-center items-center" use:emblaCarouselSvelte>
 	<div class="embla__container">
-		<div class="embla__slide"><SlideTwo /></div>
 		<div class="embla__slide"><Apod /></div>
+		<div class="embla__slide">asd</div>
 		<div class="embla__slide">asd</div>
 	</div>
 </div>

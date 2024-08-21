@@ -5,7 +5,7 @@
 	let date = new Date().toLocaleDateString();
 </script>
 
-<div class="header bg-[#f2f2f2] text-center w-[50vw] border-t-8">
+<div class="header  text-center w-[50vw] border-t-8">
 	<h1 class="text-[34px] text-bolder mb-[10px]">{headerText}</h1>
 	<h2 class="text-[16px] mb-[10px]">{subtitle}</h2>
 	<div class="text-[16px] text-[#666]">

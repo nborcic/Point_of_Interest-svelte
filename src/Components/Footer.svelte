@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<footer class=" text-black bg-[#f2f2f2] border-b-8">
+<footer class=" text-black rounded-s-full rounded-e-full border-b-8">
 	<div class=" h-32 w-[50vw] flex-col flex justify-between">
 		<div class="flex flex-row h-16 justify-center items-center gap-8">
 			<img
