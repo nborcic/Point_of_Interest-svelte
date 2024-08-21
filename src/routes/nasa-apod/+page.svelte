@@ -1,17 +1,17 @@
 <script>
-	export let apod;
-	export let error;
+	export let data;
+	const { apod, error } = data;
 </script>
 
 <div class="flex flex-col justify-center items-center container mx-auto p-4">
 	<h1 class="text-3xl font-bold mb-4">Astronomy Picture of the Day</h1>
 
 	{#if error}
-		<p class="text-xl text-red-500 text-center">{error}</p>
+		<p class="text-xl text-justify">Error: {error}</p>
 	{:else if !apod}
 		<p class="text-xl text-justify">Loading...</p>
 	{:else}
-		<div class=" flex flex-col justify-center items-center">
+		<div class="flex flex-col justify-center items-center">
 			<h2 class="text-2xl font-semibold mb-2">{apod.title}</h2>
 			<p class="text-sm text-gray-600 mb-4">{apod.date}</p>
 			{#if apod.media_type === 'image'}

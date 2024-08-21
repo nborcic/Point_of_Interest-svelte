@@ -1,3 +1,4 @@
+
 export async function load({ fetch }) {
 	const apiKey = import.meta.env.VITE_NASA_API_KEY;
 	const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
@@ -8,7 +9,6 @@ export async function load({ fetch }) {
 			throw new Error('Failed to fetch APOD data');
 		}
 		const apod = await response.json();
-
 
 		return {
 			props: {
