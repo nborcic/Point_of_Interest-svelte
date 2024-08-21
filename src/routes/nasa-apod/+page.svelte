@@ -1,46 +1,17 @@
 <script>
-	import { onMount } from 'svelte';
-	import { browser } from '$app/environment';
-
-	let apod = null; //async picture of the day
-	let error = null;
-
-	const fetchAPOD = async () => {
-		const apiKey = import.meta.env.VITE_NASA_API_KEY;
-		const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
-
-		try {
-			const response = await fetch(url);
-			if (!response.ok) {
-				throw new Error('Failed to fetch APOD data');
-			}
-			apod = await response.json();
-			const myData = localStorage.setItem('apod', JSON.stringify(apod));
-		} catch (err) {
-			error = err.message;
-		}
-	};
-
-	onMount(() => {
-		if (browser) {
-			if (localStorage.getItem('apod')) {
-				apod = JSON.parse(localStorage.getItem('apod'));
-			} else {
-				fetchAPOD();
-			}
-		}
-	});
+	export let apod;
+	export let error;
 </script>
 
 <div class="flex flex-col justify-center items-center container mx-auto p-4">
 	<h1 class="text-3xl font-bold mb-4">Astronomy Picture of the Day</h1>
 
 	{#if error}
-		<p class="text-red-500">{error}</p>
+		<p class="text-xl text-red-500 text-center">{error}</p>
 	{:else if !apod}
 		<p class="text-xl text-justify">Loading...</p>
 	{:else}
-		<div>
+		<div class=" flex flex-col justify-center items-center">
 			<h2 class="text-2xl font-semibold mb-2">{apod.title}</h2>
 			<p class="text-sm text-gray-600 mb-4">{apod.date}</p>
 			{#if apod.media_type === 'image'}
