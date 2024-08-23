@@ -1,29 +1,43 @@
 <script>
-	import { goto } from '$lib/router';
-	goto('/nasa-apod');
+	import { goto } from '$app/navigation';
 </script>
 
-<div>
+<div class="flex flex-col justify-center items-center">
 	<ul class="text-xl p-2">
 		<button
-			on:click={goto('/nasa-apod')}
+			on:click={() => goto('/nasa-apod')}
 			class="bg-black hover:bg-black-800 text-white font-bold py-2 px-4 rounded"
 		>
 			NASA APOD
 		</button>
-		<button class="bg-black hover:bg-black-800 text-white font-bold py-2 px-4 rounded">
+		<button
+			on:click={() => goto('/svelte')}
+			class="bg-black hover:bg-black-800 text-white font-bold py-2 px-4 rounded"
+		>
 			SVELTE
 		</button>
-		<button class="bg-black hover:bg-black-800 text-white font-bold py-2 px-4 rounded">
+		<button
+			on:click={() => goto('/react')}
+			class="bg-black hover:bg-black-800 text-white font-bold py-2 px-4 rounded"
+		>
 			REACT
 		</button>
-		<button class="bg-black hover:bg-black-800 text-white font-bold py-2 px-4 rounded">
+		<button
+			on:click={() => goto('/js')}
+			class="bg-black hover:bg-black-800 text-white font-bold py-2 px-4 rounded"
+		>
 			JAVASCRIPT
 		</button>
-		<button class="bg-black hover:bg-black-800 text-white font-bold py-2 px-4 rounded">
+		<button
+			on:click={() => goto('/css')}
+			class="bg-black hover:bg-black-800 text-white font-bold py-2 px-4 rounded"
+		>
 			CSS3
 		</button>
-		<button class="bg-black hover:bg-black-800 text-white font-bold py-2 px-4 rounded">
+		<button
+			on:click={() => goto('/html')}
+			class="bg-black hover:bg-black-800 text-white font-bold py-2 px-4 rounded"
+		>
 			HTML5
 		</button>
 	</ul>

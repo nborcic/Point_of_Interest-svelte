@@ -3,8 +3,7 @@
 </script>
 
 <div class="flex flex-col justify-center items-center container mx-auto p-4">
-	<h1 class="text-3xl font-bold mb-4">Svelte Today</h1>
-	<h2>{data}</h2>
+	<h1 class="text-3xl font-bold mb-4">JS Today</h1>
 </div>
 
 <style>

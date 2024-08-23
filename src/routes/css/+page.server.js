@@ -1,7 +1,7 @@
 
 export async function load({ fetch }) {
 
-	const url = "https://hacker-news.firebaseio.com/v0/item/8863.json?print=pretty";
+	const url = "";
 
 	try {
 		const response = await fetch(url);
