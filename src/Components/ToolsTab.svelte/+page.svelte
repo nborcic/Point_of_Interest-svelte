@@ -1,9 +1,14 @@
 <script>
+	import { goto } from '$lib/router';
+	goto('/nasa-apod');
 </script>
 
 <div>
 	<ul class="text-xl p-2">
-		<button class="bg-black hover:bg-black-800 text-white font-bold py-2 px-4 rounded">
+		<button
+			on:click={goto('/nasa-apod')}
+			class="bg-black hover:bg-black-800 text-white font-bold py-2 px-4 rounded"
+		>
 			NASA APOD
 		</button>
 		<button class="bg-black hover:bg-black-800 text-white font-bold py-2 px-4 rounded">
