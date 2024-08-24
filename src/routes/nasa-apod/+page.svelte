@@ -1,30 +1,48 @@
 <script>
-	export let data;
-	export let error;
+	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
 
-	const apod = data?.props?.apod;
+	let apod = null; //async picture of the day
+	let error = null;
 
-	console.log(data);
+	const fetchAPOD = async () => {
+		const apiKey = import.meta.env.VITE_NASA_API_KEY;
+		const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
+
+		try {
+			const response = await fetch(url);
+			if (!response.ok) {
+				throw new Error('Failed to fetch APOD data');
+			}
+			apod = await response.json();
+		} catch (err) {
+			error = err.message;
+		}
+	};
+
+	onMount(() => {
+		if (browser) {
+			fetchAPOD();
+		}
+	});
 </script>
 
-<div class="flex flex-col justify-center items-center container mx-auto p-4">
+<div class="container mx-auto p-4">
 	<h1 class="text-3xl font-bold mb-4">Astronomy Picture of the Day</h1>
 
 	{#if error}
-		<p class="text-xl text-justify">Error: {error}</p>
+		<p class="text-red-500">{error}</p>
 	{:else if !apod}
 		<p class="text-xl text-justify">Loading...</p>
 	{:else}
-		<div class="flex flex-col justify-center items-center">
+		<div>
 			<h2 class="text-2xl font-semibold mb-2">{apod.title}</h2>
-			<p class="text-sm text-gray-600 mb-2">{apod.date}</p>
-			<p>{apod.media_type}</p>
-
+			<p class="text-sm text-gray-600 mb-4">{apod.date}</p>
 			{#if apod.media_type === 'image'}
 				<img
 					src={apod.hdurl}
 					alt={apod.title}
-					class="rounded-lg shadow-md mb-4 w-[50vw] h-[40vh] hover:scale-[1.6]"
+					class="rounded-lg shadow-md mb-4 w-[50vw] h-[40vh] hover:scale-[1.5]"
 				/>
 			{:else if apod.media_type === 'video'}
 				<div class="aspect-w-16 aspect-h-9 mb-4">
@@ -44,6 +62,6 @@
 
 <style>
 	.container {
-		max-width: 1280px;
+		max-width: 800px;
 	}
 </style>

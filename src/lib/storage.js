@@ -5,6 +5,7 @@ const filePath = 'src/lib/FilesStorage.json';
 export function loadStoredData() {
     if (existsSync(filePath)) {
         const data = readFileSync(filePath, 'utf-8');
+        console.log(data, "data loaded");
         return JSON.parse(data);
     }
     else {
@@ -16,6 +17,8 @@ export function saveDataSmallSave(dataToSave) {
     const data = loadStoredData();
     data.push(dataToSave);
     writeFileSync(filePath, JSON.stringify(data));
+    console.log(data, "data saved");
+
 }
 
 

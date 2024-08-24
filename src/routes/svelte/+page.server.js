@@ -1,25 +1,23 @@
-
 export async function load({ fetch }) {
 
-	const url = "https://hacker-news.firebaseio.com/v0/item/8863.json?print=pretty";
-
 	try {
-		const response = await fetch(url);
+		const response = await fetch(
+			'https://newsapi.org/v2/everything?q=sveltekit&apiKey=e7b7fd80ee584b44b25181e6847abd81');
 		if (!response.ok) {
 			throw new Error('Failed to fetch APOD data');
 		}
-		const news = await response.json();
+		const svelte = await response.json();
 
 		return {
 			props: {
-				news,
+				svelte,
 				error: null
 			}
 		};
 	} catch (err) {
 		return {
 			props: {
-				news: null,
+				svelte: null,
 				error: err.message
 			}
 		};

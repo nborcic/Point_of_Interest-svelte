@@ -1,4 +1,3 @@
-
 { 
 
 {"NewYork Times": "https://developer.nytimes.com/get-started"},
@@ -39,4 +38,5 @@
 {"https://devbytes.co.in/"},
 {"https://www.sitepoint.com/blog/"},
 {"https://dev.to/souptikdn/10-best-coding-news-apps-and-websites-55h5"},
+{"https://newsapi.org/docs/endpoints/everything"},
 }

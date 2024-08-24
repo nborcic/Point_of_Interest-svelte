@@ -1,4 +1,5 @@
 <script>
+	
 </script>
 
 <footer class=" text-black rounded-s-full rounded-e-full border-b-8">
@@ -43,4 +44,5 @@
 			<p>Copyright © 2029 All Rights Reserved</p>
 		</div>
 	</div>
+	
 </footer>
