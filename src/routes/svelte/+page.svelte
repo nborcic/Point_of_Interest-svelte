@@ -12,7 +12,7 @@
 	});
 </script>
 
-<h1>SvelteKit Web Development News</h1>
+<h1 class="text-4xl">SvelteKit Web Development News</h1>
 <div class="news-container">
 	{#each articles as article}
 		<div class="news-article">

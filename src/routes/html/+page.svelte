@@ -1,9 +1,71 @@
-<div class="flex flex-col justify-center items-center container mx-auto p-4">
-	<h1 class="text-3xl font-bold mb-4">JS Today</h1>
+<script>
+	import { onMount } from 'svelte';
+
+	let articles = [];
+
+	onMount(async () => {
+		const response = await fetch(
+			'https://newsapi.org/v2/everything?q=html5&apiKey=e7b7fd80ee584b44b25181e6847abd81'
+		);
+		const data = await response.json();
+		articles = data.articles;
+	});
+</script>
+
+<h1 class="text-4xl">SvelteKit Web Development News</h1>
+<div class="news-container">
+	{#each articles as article}
+		<div class="news-article">
+			<img src={article.urlToImage || 'https://via.placeholder.com/300x150'} alt={article.title} />
+			<div class="article-content">
+				<h2><a href={article.url} target="_blank">{article.title}</a></h2>
+				<p>{article.description}</p>
+			</div>
+		</div>
+	{/each}
 </div>
 
 <style>
-	.container {
-		max-width: 1280px;
+	.news-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		padding: 20px;
+	}
+
+	.news-article {
+		background-color: white;
+		border-radius: 5px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		margin: 15px;
+		width: 300px;
+		padding: 15px;
+		text-align: left;
+	}
+
+	.news-article img {
+		max-width: 100%;
+		border-radius: 5px;
+	}
+
+	.article-content {
+		margin-top: 10px;
+	}
+
+	.article-content h2 {
+		font-size: 18px;
+		color: #007bff;
+		margin-bottom: 5px;
+	}
+
+	.article-content p {
+		font-size: 14px;
+		color: #555;
+		margin-top: 0;
+	}
+
+	.article-content a {
+		text-decoration: none;
+		color: #007bff;
 	}
 </style>
