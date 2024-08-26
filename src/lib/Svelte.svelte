@@ -5,7 +5,7 @@
 
 	onMount(async () => {
 		const response = await fetch(
-			'https://newsapi.org/v2/everything?q=html5&apiKey=e7b7fd80ee584b44b25181e6847abd81'
+			'https://newsapi.org/v2/everything?q=sveltekit&apiKey=e7b7fd80ee584b44b25181e6847abd81'
 		);
 		const data = await response.json();
 		articles = data.articles;
@@ -17,10 +17,8 @@
 	{#each articles as article}
 		<div class="news-article">
 			<img src={article.urlToImage || 'https://via.placeholder.com/300x150'} alt={article.title} />
-			<div class="article-content">
-				<h2><a href={article.url} target="_blank">{article.title}</a></h2>
-				<p>{article.description}</p>
-			</div>
+			<h2><a href={article.url} target="_blank">{article.title}</a></h2>
+			<p>{article.description}</p>
 		</div>
 	{/each}
 </div>
@@ -32,7 +30,6 @@
 		justify-content: space-around;
 		padding: 20px;
 	}
-
 	.news-article {
 		background-color: white;
 		border-radius: 5px;
@@ -42,29 +39,19 @@
 		padding: 15px;
 		text-align: left;
 	}
-
 	.news-article img {
 		max-width: 100%;
 		border-radius: 5px;
 	}
-
-	.article-content {
-		margin-top: 10px;
-	}
-
-	.article-content h2 {
+	.news-article h2 {
 		font-size: 18px;
 		color: #007bff;
-		margin-bottom: 5px;
 	}
-
-	.article-content p {
+	.news-article p {
 		font-size: 14px;
 		color: #555;
-		margin-top: 0;
 	}
-
-	.article-content a {
+	.news-article a {
 		text-decoration: none;
 		color: #007bff;
 	}

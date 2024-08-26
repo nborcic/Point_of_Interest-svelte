@@ -1,6 +1,7 @@
 <script>
 	import emblaCarouselSvelte from 'embla-carousel-svelte';
 	import Apod from './Nasa_APOD.svelte';
+	
 </script>
 
 <div class="embla flex justify-center items-center" use:emblaCarouselSvelte>

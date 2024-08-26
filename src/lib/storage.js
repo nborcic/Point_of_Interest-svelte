@@ -1,25 +1,25 @@
-import { readFileSync, writeFileSync, existsSync } from 'fs';
+// import { readFileSync, writeFileSync, existsSync } from 'fs';
 
-const filePath = 'src/lib/FilesStorage.json';
+// const filePath = 'src/lib/storage.js';
 
-export function loadStoredData() {
-    if (existsSync(filePath)) {
-        const data = readFileSync(filePath, 'utf-8');
-        console.log(data, "data loaded");
-        return JSON.parse(data);
-    }
-    else {
-        return [];
-    }
-}
+// export function loadStoredData() {
+//     if (existsSync(filePath)) {
+//         const data = readFileSync(filePath, 'utf-8');
+//         console.log(data, "data loaded");
+//         return JSON.parse(data, "returned data");
+//     }
+//     else {
+//         return [];
+//     }
+// }
 
-export function saveDataSmallSave(dataToSave) {
-    const data = loadStoredData();
-    data.push(dataToSave);
-    writeFileSync(filePath, JSON.stringify(data));
-    console.log(data, "data saved");
+// export function saveDataSmallSave(dataToSave) {
+//     const data = loadStoredData();
+//     data.push(dataToSave);
+//     writeFileSync(filePath, JSON.stringify(data));
+//     console.log(data, "data saved");
 
-}
+// }
 
 
 
@@ -72,3 +72,5 @@ export function saveDataSmallSave(dataToSave) {
 //     // write the updated JSON metadata to the file
 //     writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf-8');
 // }
+
+// storage.js

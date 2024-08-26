@@ -46,5 +46,11 @@
 		>
 			HTML5
 		</button>
+		<button
+			on:click={() => goto('/StorageData')}
+			class="bg-black hover:bg-[rgb(51,51,51)] text-white font-bold py-2 px-4 rounded"
+		>
+			Storage Data
+		</button>
 	</ul>
 </div>
