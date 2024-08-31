@@ -1,5 +1,5 @@
 <script>
-	import Svelte from '../../lib/Svelte.svelte';
+	import Svelte from '../../lib/svelte.svelte';
 </script>
 
 <Svelte />

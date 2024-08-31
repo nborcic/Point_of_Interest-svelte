@@ -5,15 +5,15 @@
 
 	onMount(async () => {
 		const response = await fetch(
-			'https://newsapi.org/v2/everything?q=sveltekit&apiKey=e7b7fd80ee584b44b25181e6847abd81'
+			'https://newsapi.org/v2/everything?q=react &apiKey=e7b7fd80ee584b44b25181e6847abd81'
 		);
 		const data = await response.json();
 		articles = data.articles;
 	});
 </script>
 
-<main class="w-[80vw] p-6">
-	<h1 class="text-4xl">SvelteKit Web Development News</h1>
+<div class="w-[80vw]">
+	<h1 class="text-4xl">React Web Development News</h1>
 	<div class="news-container">
 		{#each articles as article}
 			<div class="news-article">
@@ -26,7 +26,7 @@
 			</div>
 		{/each}
 	</div>
-</main>
+</div>
 
 <style>
 	.news-container {
