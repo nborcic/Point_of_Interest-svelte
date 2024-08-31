@@ -1,8 +1,7 @@
 <script>
-	
 </script>
 
-<footer class=" text-black rounded-s-full rounded-e-full border-b-8">
+<footer class=" text-black rounded-s-full rounded-e-full border-b-8 pb-6 mb-6">
 	<div class=" h-32 w-[50vw] flex-col flex justify-between">
 		<div class="flex flex-row h-16 justify-center items-center gap-8">
 			<img
@@ -44,5 +43,4 @@
 			<p>Copyright © 2029 All Rights Reserved</p>
 		</div>
 	</div>
-	
 </footer>

@@ -27,7 +27,7 @@
 	});
 </script>
 
-<div class="container  p-4">
+<div class="w-[80vw] p-4 flex flex-col justify-center items-center">
 	<h1 class="text-3xl font-bold mb-4">Astronomy Picture of the Day</h1>
 
 	{#if error}
@@ -35,7 +35,7 @@
 	{:else if !apod}
 		<p class="text-xl text-justify">Loading...</p>
 	{:else}
-		<div>
+		<div class="flex flex-col justify-center items-center">
 			<h2 class="text-2xl font-semibold mb-2">{apod.title}</h2>
 			<p class="text-sm text-gray-600 mb-4">{apod.date}</p>
 			{#if apod.media_type === 'image'}
@@ -55,13 +55,7 @@
 					></iframe>
 				</div>
 			{/if}
-			<p>{apod.explanation}</p>
+			<p class="flex flex-col justify-center items-center w-[60vw]">{apod.explanation}</p>
 		</div>
 	{/if}
 </div>
-
-<style>
-	.container {
-		max-width: 800px;
-	}
-</style>

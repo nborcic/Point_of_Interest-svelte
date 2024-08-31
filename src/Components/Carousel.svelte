@@ -3,6 +3,7 @@
 	import Apod from './Nasa_APOD.svelte';
 	import Svelte from '$lib/svelte.svelte';
 	import React from '$lib/react.svelte';
+	import Photography from '../lib/Photography.svelte';
 </script>
 
 <div class="embla flex justify-center shadow-lg items-center" use:emblaCarouselSvelte>
@@ -10,6 +11,12 @@
 		<div class="embla__slide"><Apod /></div>
 		<div class="embla__slide"><Svelte /></div>
 		<div class="embla__slide"><React /></div>
+	</div>
+</div>
+
+<div class="embla flex justify-center shadow-lg items-center" use:emblaCarouselSvelte>
+	<div class="embla__container">
+		<div class="embla__slide"><Photography /></div>
 	</div>
 </div>
 
@@ -31,5 +38,9 @@
 		max-width: 100%;
 		justify-items: center;
 		align-items: center;
+		height: 100vh;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		scroll-behavior: smooth;
 	}
 </style>
