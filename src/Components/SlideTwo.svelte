@@ -7,8 +7,7 @@
 	let error = null;
 
 	const fetchData = async () => {
-		const url =
-			'https://api.nasa.gov/techtransfer/patent/?engine&api_key=XU1veLH7PKJnA7br9yBkO357voaKBFZmmf0hTLio';
+		const url = `https://api.nasa.gov/techtransfer/patent/?engine&api_key=${process.env.VITE_NASA_API_KEY}`;
 
 		try {
 			const response = await fetch(url);

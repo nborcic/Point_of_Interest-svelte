@@ -1,9 +1,17 @@
 <script>
 	import { goto } from '$app/navigation';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		const canvas = document.querySelector('.canvas');
+		canvas.width = '20px';
+		canvas.height = '20px';
+	});
 </script>
 
 <div class="flex flex-col justify-center items-center">
 	<ul class="text-xl p-2">
+		<button class=" canvas"> </button>
 		<button
 			on:click={() => goto('/')}
 			class=" text-black shadow-md hover:bg-[rgb(0,0,0)] hover:text-white font-bold py-2 px-4 rounded"

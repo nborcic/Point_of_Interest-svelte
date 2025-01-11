@@ -4,9 +4,10 @@
 
 	let apod = null; //async picture of the day
 	let error = null;
-
+	console.log(VITE_NASA_API_KEY);
 	const fetchAPOD = async () => {
 		const apiKey = import.meta.env.VITE_NASA_API_KEY;
+
 		const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
 
 		try {
@@ -27,7 +28,7 @@
 	});
 </script>
 
-<div class="w-[80vw] p-4 flex flex-col justify-center items-center">
+<div class=" p-4 flex flex-col justify-center items-center">
 	<h1 class="text-3xl font-bold mb-4">Astronomy Picture of the Day</h1>
 
 	{#if error}

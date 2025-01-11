@@ -34,7 +34,7 @@
 		min-width: 0;
 		margin-left: auto;
 		margin-right: auto;
-		width: 100%;
+		width: 50%;
 		max-width: 100%;
 		justify-items: center;
 		align-items: center;
@@ -42,5 +42,8 @@
 		overflow-y: scroll;
 		overflow-x: hidden;
 		scroll-behavior: smooth;
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+		scrollbar-color: transparent transparent;
 	}
 </style>
